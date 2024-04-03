@@ -270,7 +270,7 @@ class BasketView(APIView):
     """
 
     # получить корзину
-    def get(self, request, *args, **kwargs):
+    def get(self, request: Request, *args, **kwargs):
         """
                 Retrieve the items in the user's basket.
 
@@ -292,7 +292,7 @@ class BasketView(APIView):
         return Response(serializer.data)
 
     # редактировать корзину
-    def post(self, request, *args, **kwargs):
+    def post(self, request: Request, *args, **kwargs):
         """
                Add an items to the user's basket.
 
@@ -306,9 +306,11 @@ class BasketView(APIView):
             return JsonResponse({'Status': False, 'Error': 'Log in required'}, status=403)
 
         items_sting = request.data.get('items')
+        print(items_sting)
         if items_sting:
             try:
                 items_dict = load_json(items_sting)
+                print(items_dict)
             except ValueError:
                 return JsonResponse({'Status': False, 'Errors': 'Неверный формат запроса'})
             else:
