@@ -168,6 +168,9 @@ class ProductInfo(models.Model):
             models.UniqueConstraint(fields=['product', 'shop', 'external_id'], name='unique_product_info'),
         ]
 
+    def __str__(self):
+        return self.model
+
 
 class Parameter(models.Model):
     objects = models.manager.Manager()

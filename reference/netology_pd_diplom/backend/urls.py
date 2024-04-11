@@ -5,9 +5,10 @@ from django_rest_passwordreset.views import reset_password_request_token, reset_
 #     BasketView, \
 #     AccountDetails, OrderView, PartnerState, PartnerOrders, ConfirmAccount
 
-from reference.netology_pd_diplom.backend.views import PartnerUpdate, RegisterAccount, LoginAccount, CategoryView, ShopView, ProductInfoView, \
+from backend.views import PartnerUpdate, RegisterAccount, LoginAccount, CategoryView, ShopView, ProductInfoView, \
     BasketView, \
     AccountDetails, ContactView, OrderView, PartnerState, PartnerOrders, ConfirmAccount
+
 
 app_name = 'backend'
 urlpatterns = [
@@ -28,5 +29,6 @@ urlpatterns = [
     path('order', OrderView.as_view(), name='order'),
 
 ]
+
 
 
