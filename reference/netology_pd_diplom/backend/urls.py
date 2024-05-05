@@ -9,6 +9,7 @@ from backend.views import PartnerUpdate, RegisterAccount, LoginAccount, Category
     BasketView, \
     AccountDetails, ContactView, OrderView, PartnerState, PartnerOrders, ConfirmAccount
 
+# from reference.netology_pd_diplom.backend.views import import_data_form
 
 app_name = 'backend'
 urlpatterns = [
@@ -27,7 +28,7 @@ urlpatterns = [
     path('products', ProductInfoView.as_view(), name='shops'),
     path('basket', BasketView.as_view(), name='basket'),
     path('order', OrderView.as_view(), name='order'),
-
+    # path('import-data-form/', import_data_form, name='import-data-form'),
 ]
 
 

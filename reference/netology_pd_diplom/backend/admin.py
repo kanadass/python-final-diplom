@@ -5,6 +5,9 @@ from backend.models import User, Shop, Category, Product, ProductInfo, Parameter
     Contact, ConfirmEmailToken
 
 
+# from .forms import ShopAdminForm
+
+
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
     """
@@ -24,13 +27,13 @@ class CustomUserAdmin(UserAdmin):
     list_editable = ('is_staff',)
     list_per_page = 10
 
-
-
 @admin.register(Shop)
 class ShopAdmin(admin.ModelAdmin):
     """
     Панель управления магазинами
+
     """
+    # form = ShopAdminForm
     list_display = ('name', 'url', 'user', 'state')
     list_filter = ('name', 'state')
 
@@ -107,8 +110,6 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = ('id', 'user', 'dt', 'state', 'contact')
     list_filter = ('dt', 'state')
     inlines = [OrderItemInline]
-
-
 
 
 @admin.register(OrderItem)

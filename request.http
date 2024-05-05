@@ -1,0 +1,11 @@
+POST http://localhost:8000/api/v1/user/register
+Content-Type: application/json
+
+{
+  "first_name": "Gogi",
+  "last_name": "vvf",
+  "email": "sddfsf@mail.ru",
+  "password": "dgh8435fks",
+  "company": "dkjf",
+  "position": "123456"
+}

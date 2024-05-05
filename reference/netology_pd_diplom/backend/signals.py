@@ -25,7 +25,7 @@ def password_reset_token_created(sender, instance, reset_password_token, **kwarg
     :return:
     """
     # send an e-mail to the user
-
+    print("Sending email to:", reset_password_token.user.email)
     msg = EmailMultiAlternatives(
         # title:
         f"Password Reset Token for {reset_password_token.user}",
@@ -80,4 +80,3 @@ def new_order_signal(user_id, **kwargs):
         [user.email]
     )
     msg.send()
-    

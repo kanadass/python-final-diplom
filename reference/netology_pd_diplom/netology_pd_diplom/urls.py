@@ -23,3 +23,5 @@ urlpatterns = [
 
 admin.site.site_header = 'Панель администрирования'
 admin.site.index_title = 'Онлайн магазин'
+
+
